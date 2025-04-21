@@ -2,30 +2,30 @@
 
 echo "=== Installation RaspOBD ==="
 
-# Mettre à jour le système
+# Mise à jour système
 sudo apt update && sudo apt upgrade -y
 
-# Activer SPI
-echo "Activating SPI..."
+# Activation SPI
+echo "Activation SPI..."
 sudo raspi-config nonint do_spi 0
 
-# Installer dépendances
-echo "Installing Python modules..."
-sudo apt install -y python3-pip python3-venv python3-pygame python3-gpiozero python3-bluetooth
+# Installation dépendances
+echo "Installation des modules Python nécessaires..."
+sudo apt install -y python3-pip python3-venv python3-pygame python3-gpiozero python3-bluetooth bluetooth pi-bluetooth bluez
 
-# Préparer environnement Python
+# Préparation environnement Python
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Configurer écran SPI pour Joy-It TFT
+# Configuration écran TFT
 bash scripts/configure_display.sh
 
-# Configurer Bluetooth
+# Configuration Bluetooth
 bash scripts/configure_bluetooth.sh
 
-# Activer le service système
+# Activer le service systemd pour l'interface
 sudo cp systemd/raspobd-interface.service /etc/systemd/system/
 sudo systemctl enable raspobd-interface.service
 
-echo "Installation terminée. Reboot recommandé !"
+echo "=== Installation terminée. Reboot recommandé ! ==="
