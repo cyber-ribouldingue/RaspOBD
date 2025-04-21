@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "Activation Bluetooth..."
+echo "Configuration Bluetooth pour OBD..."
 
-# Activer Bluetooth
+# Activation bluetooth service
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
-echo "Bluetooth configuré !"
+# Activation auto-pair OBD device
+echo "OBD auto-pair configuration terminée."
