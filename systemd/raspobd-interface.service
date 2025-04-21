@@ -1,0 +1,13 @@
+[Unit]
+Description=RaspOBD Interface Autostart
+After=network.target bluetooth.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pipi/RaspOBD/interface
+ExecStart=/home/pipi/RaspOBD/venv/bin/python main.py
+Restart=always
+User=pipi
+
+[Install]
+WantedBy=multi-user.target
