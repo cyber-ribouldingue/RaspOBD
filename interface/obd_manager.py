@@ -13,5 +13,6 @@ class OBDManager:
 
     def read_voltage(self):
         if self.connection and self.connection.is_connected():
-            return self.connection.query(obd.commands.ELM_VOLTAGE).value
+            response = self.connection.query(obd.commands.ELM_VOLTAGE)
+            return response.value
         return None
