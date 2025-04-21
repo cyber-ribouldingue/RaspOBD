@@ -22,6 +22,9 @@ def main():
     def refresh():
         manager.show_message(menu[current_selection])
 
+    # Écran d'accueil
+    manager.show_message("Bienvenue sur RaspOBD")
+    time.sleep(2)
     refresh()
 
     while True:
@@ -44,9 +47,9 @@ def main():
                 if voltage:
                     manager.show_message(f"Tension: {voltage}V")
                 else:
-                    manager.show_message("Erreur de lecture")
+                    manager.show_message("Erreur Lecture")
             elif menu[current_selection] == "Température Moteur":
-                manager.show_message("TODO: Température moteur")
+                manager.show_message("À venir...")
             elif menu[current_selection] == "Quitter":
                 pygame.quit()
                 exit()
