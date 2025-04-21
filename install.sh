@@ -21,7 +21,8 @@ source venv/bin/activate
 # Installer bibliothèques Python standards
 echo "Installation des dépendances Python..."
 pip install pygame gpiozero pybluez
-
+# Installer PyBluez compatible Python 3.11
+pip install git+https://github.com/pybluez/pybluez.git
 # Installer python-OBD depuis GitHub (solution compatible Raspberry Pi)
 echo "Installation de python-OBD depuis GitHub..."
 cd ~
