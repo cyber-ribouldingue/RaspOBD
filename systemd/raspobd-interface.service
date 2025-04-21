@@ -1,5 +1,5 @@
 [Unit]
-Description=RaspOBD Interface Autostart
+Description=RaspOBD Interface Auto-Start
 After=network.target bluetooth.target
 
 [Service]
